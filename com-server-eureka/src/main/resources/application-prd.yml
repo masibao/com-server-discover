@@ -4,6 +4,4 @@ spring:
   application:
     name: com-server-eureka
 
-file:
-  storage:
-    path: /Users/mayi/XIYU/temp
+file.storage.path=/data/netup
