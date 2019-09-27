@@ -7,3 +7,14 @@ spring:
 file:
   storage:
     path: /data/netup
+
+#Eureka服务注册中心
+eureka:
+  instance:
+    hostname: 172.16.204.164 #服务注册中心IP地址
+    port: 8084 #服务注册中心端口
+  client:
+    registerWithEureka: false #是否向服务注册中心注册自己
+    fetchRegistry: false #是否检索服务
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
