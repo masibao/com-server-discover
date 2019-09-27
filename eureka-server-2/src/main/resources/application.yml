@@ -4,4 +4,4 @@ spring:
   application:
     name: eureka-server-2
   profiles:
-    active: dev
+    active: prd

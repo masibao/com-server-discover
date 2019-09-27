@@ -4,4 +4,4 @@ spring:
   application:
     name: provider-transport-file
   profiles:
-    active: dev
+    active: prd
