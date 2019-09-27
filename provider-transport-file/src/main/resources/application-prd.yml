@@ -1,0 +1,16 @@
+
+file:
+  storage:
+    path: /data/netup
+
+#Eureka服务注册中心
+eureka:
+  instance:
+    preferIpAddress: true
+    #这样写eureka服务注册中心会显示本机ip+端口号
+    instanceId: ${spring.application.name}:${server.port}
+    #这样写eureka服务注册中心会显示项目名和端口号
+    #instanceId: ${spring.application.name}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://172.16.204.164:8083/eureka/,http://172.16.204.164:8084/eureka/  #集群注册中心地址

@@ -22,6 +22,8 @@
 
     <modules>
         <module>com-server-eureka</module>
+        <module>eureka-server-2</module>
+        <module>provider-transport-file</module>
     </modules>
 
     <build>

@@ -1,7 +1,7 @@
 server:
-  port: 8084
+  port: 8085
 spring:
   application:
-    name: eureka-server-2
+    name: provider-transport-file
   profiles:
     active: dev
