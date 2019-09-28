@@ -13,4 +13,4 @@ eureka:
     #instanceId: ${spring.application.name}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8083/eureka/,http://127.0.0.1:8084/eureka/  #集群注册中心地址
+      defaultZone: http://localhost:8083/eureka/,http://localhost:8084/eureka/  #集群注册中心地址

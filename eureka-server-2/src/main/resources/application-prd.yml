@@ -6,7 +6,7 @@ file:
 #Eureka服务注册中心
 eureka:
   instance:
-    hostname: 127.0.0.1 #服务注册中心IP地址
+    hostname: localhost #服务注册中心IP地址
     port: 8083 #服务注册中心端口
     prefer-ip-address: true
     instanceId: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
