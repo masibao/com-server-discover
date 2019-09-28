@@ -11,7 +11,7 @@ file:
 #Eureka服务注册中心
 eureka:
   instance:
-    hostname: localhost #服务注册中心名称
+    hostname: eureka01 #服务注册中心名称
     port: 8084 #服务注册中心端口
     prefer-ip-address: true
     instanceId: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
@@ -19,4 +19,4 @@ eureka:
     registerWithEureka: false #是否向服务注册中心注册自己
     fetchRegistry: false #是否检索服务
     serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      defaultZone: http://eureka02:${eureka.instance.port}/eureka/
