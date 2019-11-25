@@ -24,6 +24,8 @@
         <module>com-server-eureka</module>
         <module>eureka-server-2</module>
         <module>provider-transport-file</module>
+        <module>spring-server-monitor</module>
+        <module>provider-user</module>
     </modules>
 
     <build>

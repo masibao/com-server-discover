@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mayi.user.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.mayi.user.entity.UserDo" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="card_id" property="cardId" jdbcType="VARCHAR" />
+    <result column="card_front_url" property="cardFrontUrl" jdbcType="VARCHAR" />
+    <result column="card_back_url" property="cardBackUrl" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="honor_name" property="honorName" jdbcType="VARCHAR" />
+    <result column="honor_level" property="honorLevel" jdbcType="TINYINT" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, name, nick_name, card_id, card_front_url, card_back_url, mobile, create_time, 
+    modify_time, honor_name, honor_level, delete_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_USER
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_USER
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mayi.user.entity.UserDo" >
+    insert into T_USER (user_id, name, nick_name, 
+      card_id, card_front_url, card_back_url, 
+      mobile, create_time, modify_time, 
+      honor_name, honor_level, delete_flag
+      )
+    values (#{userId}, #{name}, #{nickName},
+      #{cardId}, #{cardFrontUrl,}, #{cardBackUrl},
+      #{mobile}, #{createTime}, #{modifyTime},
+      #{honorName}, #{honorLevel,}, #{deleteFlag}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mayi.user.entity.UserDo">
+    insert into T_USER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="cardId != null" >
+        card_id,
+      </if>
+      <if test="cardFrontUrl != null" >
+        card_front_url,
+      </if>
+      <if test="cardBackUrl != null" >
+        card_back_url,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="honorName != null" >
+        honor_name,
+      </if>
+      <if test="honorLevel != null" >
+        honor_level,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null" >
+        #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="cardFrontUrl != null" >
+        #{cardFrontUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="cardBackUrl != null" >
+        #{cardBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="honorName != null" >
+        #{honorName,jdbcType=VARCHAR},
+      </if>
+      <if test="honorLevel != null" >
+        #{honorLevel,jdbcType=TINYINT},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mayi.user.entity.UserDo" >
+    update T_USER
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null" >
+        card_id = #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="cardFrontUrl != null" >
+        card_front_url = #{cardFrontUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="cardBackUrl != null" >
+        card_back_url = #{cardBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="honorName != null" >
+        honor_name = #{honorName,jdbcType=VARCHAR},
+      </if>
+      <if test="honorLevel != null" >
+        honor_level = #{honorLevel,jdbcType=TINYINT},
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag = #{deleteFlag,jdbcType=TINYINT},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mayi.user.entity.UserDo" >
+    update T_USER
+    set name = #{name,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      card_id = #{cardId,jdbcType=VARCHAR},
+      card_front_url = #{cardFrontUrl,jdbcType=VARCHAR},
+      card_back_url = #{cardBackUrl,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      honor_name = #{honorName,jdbcType=VARCHAR},
+      honor_level = #{honorLevel,jdbcType=TINYINT},
+      delete_flag = #{deleteFlag,jdbcType=TINYINT}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectCount" resultType="java.lang.Integer">
+    SELECT  COUNT(*) FROM  T_USER
+  </select>
+
+  <insert id="insertUserAddress">
+    insert into USER_ADDRESS(NAME,AGE,ADDRESS) values
+    <foreach collection="list" separator="," item="item">
+     (#{item.name},#{item.age},#{item.address})
+    </foreach>
+  </insert>
+</mapper>

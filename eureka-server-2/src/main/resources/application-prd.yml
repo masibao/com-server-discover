@@ -4,6 +4,7 @@ file:
     path: /data/netup
 
 #Eureka服务注册中心
+
 eureka:
   instance:
     hostname: eureka02 #服务注册中心IP地址
