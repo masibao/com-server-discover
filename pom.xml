@@ -4,10 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mayi</groupId>
-    <artifactId>com-server-discover</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <modules>
+        <module>com-server-eureka</module>
+        <module>eureka-server-2</module>
+        <module>provider-transport-file</module>
+        <module>spring-server-monitor</module>
+        <module>provider-user</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -16,17 +19,16 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <groupId>com.mayi</groupId>
+    <artifactId>com-server-discover</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
-    <modules>
-        <module>com-server-eureka</module>
-        <module>eureka-server-2</module>
-        <module>provider-transport-file</module>
-        <module>spring-server-monitor</module>
-        <module>provider-user</module>
-    </modules>
 
     <build>
         <plugins>
