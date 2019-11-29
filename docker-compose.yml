@@ -11,3 +11,8 @@ services:
     ports:
       - 9084:9084
     restart: "always"
+  service_provider_user:
+    image: registry.cn-shanghai.aliyuncs.com/list_of_eureka/service_provider_user:latest
+    ports:
+      - 9087:9087
+    restart: "always"
