@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>com-server-eureka</artifactId>
 	<packaging>jar</packaging>
-	
+
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

@@ -1,0 +1,1 @@
+sudo docker login --username=霹雳马科技 -p=128910mayi registry.cn-shanghai.aliyuncs.com

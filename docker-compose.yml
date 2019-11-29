@@ -1,0 +1,13 @@
+version: '2.1'
+services:
+
+  server_eureka1_v3:
+    image: registry.cn-shanghai.aliyuncs.com/list_of_eureka/service_eureka_1:latest
+    ports:
+      - 9083:9083
+    restart: "always"
+  server_eureka2_v3:
+    image: registry.cn-shanghai.aliyuncs.com/list_of_eureka/service_eureka_2:latest
+    ports:
+      - 9084:9084
+    restart: "always"
