@@ -1,6 +1,4 @@
 
 spring:
-  application:
-    name: provider-user
   profiles:
     active: dev
