@@ -7,7 +7,7 @@ file:
 #Eureka服务注册中心
 eureka:
   instance:
-    hostname: localhost #服务注册中心IP地址
+    hostname: eureka_2 #服务注册中心IP地址
     prefer-ip-address: true
   client:
     registerWithEureka: false #是否向服务注册中心注册自己
