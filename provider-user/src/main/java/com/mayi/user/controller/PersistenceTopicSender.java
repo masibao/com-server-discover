@@ -1,15 +1,18 @@
+/*
 package com.mayi.user.controller;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
+*/
 /**
  * @Classname com-server-discover
  * @Author: Tony
  * @Description:
  * @Date: Create in 13:42 2019/11/30
- */
+ *//*
+
 public class PersistenceTopicSender {
 
 
@@ -34,3 +37,4 @@ public class PersistenceTopicSender {
         connection.close();
     }
 }
+*/
