@@ -13,10 +13,10 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @Slf4j
 @RequestMapping("/mq")
-public class QueueSenderController {
+public class QueueReciiverController {
 
 
-    @GetMapping("/send")
+    @GetMapping("/receiver")
     public String send() throws JMSException {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory("tcp://116.62.234.85:1616");
         Connection connection = activeMQConnectionFactory.createConnection();

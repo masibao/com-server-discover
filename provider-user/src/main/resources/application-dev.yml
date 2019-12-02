@@ -53,8 +53,20 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       loginUsername: admin
       loginPassword: admin
+  activemq:
+    broker-url: tcp://116.62.234.85:1616
+    in-memory: true
+    non-blocking-redelivery: false   #这意味着当启用此命令时，消息顺序不会被保留
+    send-timeout: 0  # 等待消息发送响应的时间。设置为0等待永远。
+    user: admin
+    password: admin
+  jms:
+    pub-sub-domain: true #默认情况下activemq提供的是queue模式，若要使用topic模式需要配置为true
 
 
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-handlers-package: com.mayi.user.mapper
+
+
+
