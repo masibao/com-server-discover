@@ -1,0 +1,45 @@
+
+spring:
+  application:
+    name: redis-using
+  redis:
+    database: 0
+    #单机版
+    #    host: 127.0.0.1
+    #    port: 6379
+    #    password: 123456
+    #      pool:
+    #        max-idle: 100
+    #        min-idle: 1
+    #        max-active: 1000
+    #        max-wait: -1
+    #集群版
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 15000
+    cluster:
+      nodes:
+        - 10.6.54.39:7001
+        - 10.6.54.39:7002
+        - 10.6.54.44:7001
+        - 10.6.54.44:7002
+        - 10.6.54.48:7001
+        - 10.6.54.48:7002
+server:
+  port: 7099
+
+zk:
+  address: 10.6.54.39:2181,10.6.54.44:2181,10.6.54.48:2181
+
+#redisson:
+#  password: 123456
+#  model: SINGLE
+#  singleServerConfig:
+#    address: 127.0.0.1:6379
+
+
+

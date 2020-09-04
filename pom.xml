@@ -10,6 +10,11 @@
         <module>provider-transport-file</module>
         <module>spring-server-monitor</module>
         <module>provider-user</module>
+        <module>leetcode-learn</module>
+        <module>redis-using</module>
+        <module>com-pilima-zk</module>
+        <module>admin-web</module>
+        <module>redis-sentinel</module>
     </modules>
 
     <parent>

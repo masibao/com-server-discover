@@ -1,5 +1,6 @@
 package com.mayi.user.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,12 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: Create in 11:08 2019/12/2
  */
 @RestController
+@Slf4j
 public class ConsumerTwoController {
 
     @JmsListener(destination = "active.topic")
     public void receiveActiveTopic(String msg){
 
-        System.out.println("接收到二: " + msg);
+        log.info("receive topic 2: {}",msg);
     }
 
 }

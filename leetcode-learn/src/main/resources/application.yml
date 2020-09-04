@@ -1,0 +1,6 @@
+
+spring:
+  application:
+    name: leetcode
+server:
+  port: 7088
