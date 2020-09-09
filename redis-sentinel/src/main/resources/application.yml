@@ -1,29 +1,50 @@
-redis:
-  ##单机
-  #    host: 172.21.0.211
-  #    port: 6379
-  ##哨兵
-  sentinel:
-    master: imaster
-    nodes:
-      - redis1.test.yiyaowang.com:26379
-      - redis1.test.yiyaowang.com:26379
-      - redis1.test.yiyaowang.com:26379
-  ##
-  jedis:
-    pool:
-      ### 连接池最大连接数（使用负值表示没有限制）
-      max-active: 9
-      ### 连接池最大阻塞等待时间（使用负值表示没有限制）
-      max-wait: -1
-      ### 连接池中的最大空闲连接
-      max-idle: 9
-      ### 连接池中的最小空闲连接
-      min-idle: 0
-  ### Redis数据库索引(默认为0)
-  database: 0
-  ### 连接超时时间（毫秒）
-  timeout: 60000
+
+#redis:
+#  ##单机
+#  #    host: 172.21.0.211
+#  #    port: 6379
+#  ##哨兵
+#  sentinel:
+#    master: imaster
+#    nodes:
+#      - redis1.test.yiyaowang.com:26379
+#      - redis1.test.yiyaowang.com:26379
+#      - redis1.test.yiyaowang.com:26379
+#  ##
+#  jedis:
+#    pool:
+#      ### 连接池最大连接数（使用负值表示没有限制）
+#      max-active: 9
+#      ### 连接池最大阻塞等待时间（使用负值表示没有限制）
+#      max-wait: -1
+#      ### 连接池中的最大空闲连接
+#      max-idle: 9
+#      ### 连接池中的最小空闲连接
+#      min-idle: 0
+#  ### Redis数据库索引(默认为0)
+#  database: 0
+#  ### 连接超时时间（毫秒）
+#  timeout: 60000
+
 
 server:
   port: 8084
+spring:
+  redis:
+    sentinel:
+      master: imaster
+      nodes:
+        - redis1.test.yiyaowang.com:26379
+        - redis1.test.yiyaowang.com:26379
+        - redis1.test.yiyaowang.com:26379
+    database: 0
+    password: foobared
+    jedis:
+      pool:
+        #负数表示没有限制
+        max-active: -1
+        max-idle: 9
+        min-idle: 0
+        max-wait: 6000
+#    timeout: 6000
+

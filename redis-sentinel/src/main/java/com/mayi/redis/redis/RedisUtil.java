@@ -6,9 +6,13 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 /**
  * Redis工具类
@@ -16,11 +20,14 @@ import org.springframework.util.CollectionUtils;
  * @author 共通组
  * @date 2019年2月25日
  */
-@Component
+
+@Service
 public final class RedisUtil {
 
     @Autowired
+    @Qualifier("redis1")
     private RedisTemplate<String, Object> redisTemplate;
+
 
     // =============================common============================
     /**

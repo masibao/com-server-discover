@@ -22,6 +22,7 @@ public class CacheReadWriteController {
     @GetMapping("/write")
     public String writeCache(String content){
         boolean name = redisUtil.set("name", content);
+//        String name = redisUtil.setKey();
         return "" + name;
 
     }
@@ -30,6 +31,21 @@ public class CacheReadWriteController {
     public String readCache(){
         Object name = redisUtil.get("name");
         return name.toString();
+
+    }
+
+
+    @GetMapping("/decr")
+    public String decr(){
+        long name = redisUtil.decr("stoge",1);
+        return "" + name;
+
+    }
+
+    @GetMapping("/incr")
+    public String incr(){
+        long name = redisUtil.incr("stoge",1);
+        return "" + name;
 
     }
 }
